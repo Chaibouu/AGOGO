@@ -1,3 +1,34 @@
 body{
     background-color: rgb(33, 246, 175);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    margin: 0;
+}
+.containerbtn{
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    border-bottom: 2px solid rgba(94, 94, 94, 0.532);
+}
+.btn{
+    border: none;
+    background-color: rgb(33, 246, 175);
+    width: 19.7vw;
+    font-size: 1.2em;
+    color: rgb(251, 249, 249);
+    padding: 4px;
+}
+.entrer{
+    border: none;
+    padding: 10px;
+    width: 200px;
+
 }
