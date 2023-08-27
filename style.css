@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(33, 246, 175);
+    background-color: rgb(14, 214, 148);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,21 +7,20 @@ body{
 main{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     margin: 0;
 }
 .containerbtn{
     position: absolute;
     top: 0px;
-    width: 100vw;
+    width: 100%;
     border-bottom: 2px solid rgba(94, 94, 94, 0.532);
 }
 .btn{
     border: none;
-    background-color: rgb(33, 246, 175);
-    width: 19.7vw;
+    background-color: rgb(14, 214, 148);
+    width: 19.7%;
     font-size: 1.2em;
     color: rgb(251, 249, 249);
     padding: 4px;
@@ -30,5 +29,23 @@ main{
     border: none;
     padding: 10px;
     width: 200px;
+    border-radius: 5px;
 
+}
+.containertemps{
+    position: absolute;
+    margin-top: 150px;
+
+}
+.containertempss{
+    position: absolute;
+    margin-top: 40em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+.containertempss .time{
+    font-size: 50px;
+    font-weight: 500;
 }
