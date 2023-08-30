@@ -26,7 +26,7 @@ let tempsrestent = document.querySelector('.tempsrestent');
  
  const chronos = ()=>{
 
-    if (minutes > 60) {
+    if (minutes >= 60) {
       heures = Math.floor(minutes/60);
       minutes = Math.floor(minutes % 60);
     }
@@ -40,19 +40,28 @@ let tempsrestent = document.querySelector('.tempsrestent');
       heures = parseInt(heures);
       minutes = parseInt(minutes);
       secondes = parseInt(secondes);
-      secondes--;
-  
-      if (minutes == 0 && heures > 0) {
-        heures--;
-        minutes = minutes + 59;
+      
+      // secondes--;
+
+      if (secondes > 0) {
+        secondes--;
+      } else {
+        if (minutes > 0) {
+          minutes--;
+          secondes = 59;
+        } else {
+          if (heures > 0) {
+            heures--;
+            minutes = 59;
+            secondes = 59;
+          } else {
+            clearTimeout(timeout);
+            containertempss.style.visibility = 'hidden';
+            return;
+          }
+        }
       }
-       if (secondes == 0 && minutes > 0) {
-         minutes--;
-         secondes = 59;
-       }
-      if (secondes <= 0) {
-        secondes = 0;
-      }
+    
        if (secondes < 10) {
         secondes = "0" + secondes;
        }
@@ -80,14 +89,14 @@ cappucino.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 5;
-  secondes = 1;
+  secondes = 0;
   chronos();
 });
 the.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 15;
-  secondes = 1;
+  secondes = 0;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -95,7 +104,7 @@ petitdejeuner.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 20;
-  secondes = 1;
+  secondes = 0;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -103,7 +112,7 @@ dejeuner.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 30;
-  secondes = 1;
+  secondes = 0;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -111,8 +120,9 @@ dejeuner.addEventListener('click',()=>{
 form.addEventListener('submit',(e)=>{
   e.preventDefault();
   let valeur = parseFloat(entrer.value);
+  console.log(valeur);
   minutes = valeur;
-  secondes = 1;
+  secondes = 0;
 
   clearTimeout(timeout);
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
