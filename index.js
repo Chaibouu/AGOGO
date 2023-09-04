@@ -25,7 +25,7 @@ let tempsrestent = document.querySelector('.tempsrestent');
  }
  
  const chronos = ()=>{
-
+      
     if (minutes >= 60) {
       heures = Math.floor(minutes/60);
       minutes = Math.floor(minutes % 60);
@@ -82,7 +82,7 @@ secs.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 0;
-  secondes = 20;
+  secondes = 21;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -90,7 +90,7 @@ cappucino.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 5;
-  secondes = 0;
+  secondes = 1;
   chronos();
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
 });
@@ -98,7 +98,7 @@ the.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 15;
-  secondes = 0;
+  secondes = 1;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -106,7 +106,7 @@ petitdejeuner.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 20;
-  secondes = 0;
+  secondes = 1;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
@@ -114,23 +114,28 @@ dejeuner.addEventListener('click',()=>{
   clearTimeout(timeout);
   heures = 0;
   minutes = 30;
-  secondes = 0;
+  secondes = 1;
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
 });
 
 form.addEventListener('submit',(e)=>{
   e.preventDefault();
-  let valeur = parseFloat(entrer.value);
-  console.log(valeur);
+  heures = 0;
+  let valeur = parseInt(entrer.value);
   minutes = valeur;
-  secondes = 0;
+  secondes = 1;
 
   clearTimeout(timeout);
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
+  entrer.value = '';
   
 })
+
+
+
+
 
 
 

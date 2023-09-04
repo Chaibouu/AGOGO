@@ -52,3 +52,60 @@ main{
 .hidden{
     visibility: hidden;
 }
+@media screen and (max-width: 1024px){
+    .btn{
+        width: 19%;
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 768px){
+    .btn{
+        width: 19%;
+        font-size: 0.8em;
+    }
+    .containertempss{
+        margin-top: 30em;
+    }
+}
+@media screen and (max-width: 425px){
+     .btn{
+        width: 100%;
+        border: 1px solid #3bb416;
+        font-size: 1.1em;
+    }
+    .containertempss{
+        margin-top: 25em;
+    }
+    .containerbtn{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid rgba(94, 94, 94, 0.532);
+    }
+    .containertemps{
+        position: absolute;
+        margin-top: 210px;
+    
+    }
+}
+@media screen and (max-width: 375px){
+     .btn{
+        width: 100%;
+        border: 1px solid #3bb416;
+        font-size: 1.1em;
+    }
+    .containertempss{
+        margin-top: 25em;
+    }
+    .containerbtn{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid rgba(94, 94, 94, 0.532);
+    }
+    .containertemps{
+        position: absolute;
+        margin-top: 210px;
+    
+    }
+}
