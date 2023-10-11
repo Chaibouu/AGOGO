@@ -9,7 +9,7 @@ let containertempss = document.querySelector('.containertempss');
 let form =  document.querySelector('#form');
 let tempsrestent = document.querySelector('.tempsrestent');
 
-//commentaire
+
   let heures = 0;
   let minutes = 0;
   let secondes = 0;
@@ -120,6 +120,7 @@ dejeuner.addEventListener('click',()=>{
 });
 
 form.addEventListener('submit',(e)=>{
+if (entrer.value > 0) {
   e.preventDefault();
   heures = 0;
   let valeur = parseInt(entrer.value);
@@ -130,6 +131,10 @@ form.addEventListener('submit',(e)=>{
   tempsrestent.textContent = "Be Back At " + BeBAckAt(minutes);
   chronos();
   entrer.value = '';
+}
+else{
+  alert("Veuillez entrer un temp valid")
+}
   
 })
 
